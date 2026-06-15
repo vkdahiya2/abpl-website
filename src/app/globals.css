@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+:root {
+  --navy:        #1C2B4A;
+  --navy2:       #243352;
+  --gold:        #C9A444;
+  --gold-light:  #F0E6C8;
+  --gold-mid:    #D4B45A;
+  --cream:       #F8F5EF;
+  --cream2:      #F2EDE3;
+  --white:       #FFFFFF;
+  --text:        #1C2B4A;
+  --text-muted:  #64748B;
+  --border:      #E5DECE;
+  --shadow:      0 4px 24px rgba(28,43,74,0.08);
+  --shadow-lg:   0 12px 40px rgba(28,43,74,0.14);
+  --background:  #ffffff;
+  --foreground:  #1C2B4A;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+html { scroll-behavior: smooth; }
+
+/* ── Animations ─────────────────────────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.94); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes pulse-gold {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201,164,68,0.4); }
+  50%       { box-shadow: 0 0 0 12px rgba(201,164,68,0); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+/* Animation utility classes */
+.animate-fade-in-up   { animation: fadeInUp 0.7s ease-out both; }
+.animate-fade-in      { animation: fadeIn 0.6s ease-out both; }
+.animate-slide-left   { animation: slideInLeft 0.7s ease-out both; }
+.animate-slide-right  { animation: slideInRight 0.7s ease-out both; }
+.animate-scale-in     { animation: scaleIn 0.6s ease-out both; }
+.animate-float        { animation: float 3s ease-in-out infinite; }
+
+/* Staggered delays */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+
+/* WhatsApp pulse */
+.whatsapp-pulse { animation: pulse-gold 2s infinite; }
+
+/* Gold accent line */
+.gold-line {
+  display: inline-block;
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, #C9A444, #F0D78C);
+  border-radius: 2px;
+}
+.gold-line-wide { width: 72px; }
+
+/* Section heading style */
+.section-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+
+/* Premium card hover */
+.card-hover {
+  transition: transform 0.28s cubic-bezier(.22,1,.36,1), box-shadow 0.28s ease;
+}
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Gradient text */
+.text-gradient-gold {
+  background: linear-gradient(135deg, #C9A444 0%, #E8C96B 50%, #C9A444 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Premium button */
+.btn-gold {
+  background: linear-gradient(135deg, #C9A444, #D4B45A);
+  color: #fff;
+  font-weight: 700;
+  border-radius: 10px;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(201,164,68,0.35);
+}
+.btn-gold:hover {
+  background: linear-gradient(135deg, #B8932E, #C9A444);
+  box-shadow: 0 6px 20px rgba(201,164,68,0.45);
+  transform: translateY(-1px);
+}
+
+.btn-navy {
+  background: var(--navy);
+  color: #fff;
+  font-weight: 700;
+  border-radius: 10px;
+  transition: all 0.25s ease;
+}
+.btn-navy:hover {
+  background: var(--navy2);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(28,43,74,0.25);
+}
+
+/* Divider ornament */
+.divider-ornament {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+.divider-ornament::before,
+.divider-ornament::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
