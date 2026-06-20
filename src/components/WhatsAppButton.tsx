@@ -2,7 +2,7 @@
 
 export default function WhatsAppButton() {
   const message = "Hi ABPL, I'm interested in your properties. Please share details.";
-  const whatsappUrl = `https://wa.me/919630003058?text=${encodeURIComponent(message)}`;
+  const whatsappUrl = `https://wa.me/919630030058?text=${encodeURIComponent(message)}`;
 
   return (
     <a

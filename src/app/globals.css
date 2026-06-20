@@ -260,6 +260,17 @@ html { scroll-behavior: smooth; }
 }
 
 /* ══════════════════════════════════════════════════════════
+   HERO IMAGE ZOOM — on-load pan/zoom effect
+══════════════════════════════════════════════════════════ */
+@keyframes heroImageZoom {
+  from { transform: scale(1.08); }
+  to   { transform: scale(1); }
+}
+.hero-img-zoom {
+  animation: heroImageZoom 2.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ══════════════════════════════════════════════════════════
    IMAGE REVEAL / OVERLAY EFFECTS
 ══════════════════════════════════════════════════════════ */
 .img-reveal {

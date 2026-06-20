@@ -26,7 +26,7 @@ export default function LeadForm() {
           Our team will call you within 2 business hours.
         </p>
         <a
-          href={`https://wa.me/919630003058?text=${encodeURIComponent(
+          href={`https://wa.me/919630030058?text=${encodeURIComponent(
             `Hi ABPL, I just submitted an enquiry. My name is ${form.name}.`
           )}`}
           target="_blank"

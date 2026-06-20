@@ -39,7 +39,7 @@ export default function ContactPage() {
             Contact Us
           </h1>
           <p className="animate-fade-in-up delay-200 text-gray-300 text-lg max-w-xl mx-auto">
-            Talk to our team. Book a free site visit. We&apos;re available Mon–Sat, 10 AM – 6 PM.
+            Talk to our team. Book a free site visit. We&apos;re available Wed–Mon, 10 AM – 6 PM.
           </p>
           <div className="w-16 h-1 bg-[#C9A444] rounded mx-auto mt-5" />
         </div>
@@ -66,7 +66,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="font-bold text-[#1C2B4A] text-sm mb-0.5">Office Address</p>
-                  <p className="text-[#64748B] text-sm">Parkar White Lily Agency, Sector 27</p>
+                  <p className="text-[#64748B] text-sm">B-604, Parker White Lily Residency, Sector 27, Sonipat</p>
                 </div>
               </div>
 
@@ -77,8 +77,8 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="font-bold text-[#1C2B4A] text-sm mb-0.5">Call / WhatsApp</p>
-                  <a href="tel:+919630003058" className="text-[#C9A444] font-semibold text-sm hover:underline">
-                    96300 03058
+                  <a href="tel:+919630030058" className="text-[#C9A444] font-semibold text-sm hover:underline">
+                    +91 9630030058
                   </a>
                 </div>
               </div>
@@ -90,8 +90,8 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="font-bold text-[#1C2B4A] text-sm mb-0.5">Email Us</p>
-                  <a href="mailto:mail2abpl@gmail.com" className="text-[#C9A444] font-semibold text-sm hover:underline">
-                    mail2abpl@gmail.com
+                  <a href="mailto:mailtoabpl@gmail.com" className="text-[#C9A444] font-semibold text-sm hover:underline">
+                    mailtoabpl@gmail.com
                   </a>
                 </div>
               </div>
@@ -103,7 +103,8 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="font-bold text-[#1C2B4A] text-sm mb-0.5">Office Hours</p>
-                  <p className="text-[#64748B] text-sm">Monday – Saturday: 10:00 AM – 6:00 PM</p>
+                  <p className="text-[#64748B] text-sm">Wed – Mon: 10:00 AM – 6:00 PM</p>
+                  <p className="text-[#64748B] text-sm">Tuesday: Closed</p>
                 </div>
               </div>
             </div>
@@ -111,18 +112,18 @@ export default function ContactPage() {
             {/* Action buttons */}
             <div className="space-y-3">
               <a
-                href="https://wa.me/919630003058?text=Hi+ABPL%2C+I+want+to+book+a+site+visit."
+                href="https://wa.me/919630030058?text=Hi+ABPL%2C+I+want+to+book+a+site+visit."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-3 bg-[#25D366] text-white font-semibold px-5 py-3.5 rounded-xl text-sm hover:bg-[#20B857] transition-colors w-full"
               >
-                💬 Book via WhatsApp — 96300 03058
+                💬 Book via WhatsApp — +91 9630030058
               </a>
               <a
-                href="tel:+919630003058"
+                href="tel:+919630030058"
                 className="flex items-center justify-center gap-3 bg-[#1C2B4A] text-white font-semibold px-5 py-3.5 rounded-xl text-sm hover:bg-[#243352] transition-colors w-full"
               >
-                📞 Call Now — 96300 03058
+                📞 Call Now — +91 9630030058
               </a>
             </div>
 
@@ -131,9 +132,9 @@ export default function ContactPage() {
               <p className="text-sm font-bold text-[#1C2B4A] mb-3">Follow Us</p>
               <div className="flex gap-3">
                 {[
-                  { href: "https://instagram.com/aashna_buildwell", icon: <InstagramSVG />, label: "Instagram" },
-                  { href: "https://linkedin.com/company/aashna-buildwell", icon: <LinkedInSVG />, label: "LinkedIn" },
-                  { href: "https://facebook.com/profile.php?id=61588621825762", icon: <FacebookSVG />, label: "Facebook" },
+                  { href: "https://www.instagram.com/aashna__buildwell/", icon: <InstagramSVG />, label: "Instagram" },
+                  { href: "https://www.linkedin.com/in/aashna-buildwell-2b1612408/", icon: <LinkedInSVG />, label: "LinkedIn" },
+                  { href: "https://www.facebook.com/profile.php?id=61590200281882", icon: <FacebookSVG />, label: "Facebook" },
                 ].map((s) => (
                   <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
                     className="flex items-center gap-2 border border-[#E5DECE] text-[#1C2B4A] hover:border-[#C9A444] hover:text-[#C9A444] px-4 py-2 rounded-lg text-sm font-medium transition-colors">

@@ -1,129 +1,62 @@
 import Link from "next/link";
-import { Phone, ArrowRight, CheckCircle, Award, Users, Building2, Mail, PhoneCall } from "lucide-react";
+import { Phone, ArrowRight, CheckCircle, Award, Users, Building2, Mail } from "lucide-react";
 import LeadForm from "@/components/LeadForm";
 
 export default function HomePage() {
   return (
     <>
       {/* ══════════════════════════════════════════════════
-          HERO — Full width, no lead form, premium visual
+          HERO — Full-width building background, premium
       ══════════════════════════════════════════════════ */}
-      <section className="relative bg-[#1C2B4A] min-h-[90vh] flex items-center overflow-hidden">
+      <section className="relative min-h-[100vh] flex items-center overflow-hidden">
 
-        {/* Subtle gold grid */}
-        <div className="absolute inset-0 opacity-[0.055]"
-          style={{
-            backgroundImage: "linear-gradient(#C9A444 1px, transparent 1px), linear-gradient(90deg, #C9A444 1px, transparent 1px)",
-            backgroundSize: "64px 64px",
-          }} />
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <img
+            src="/images/swastik-hero.jpg"
+            alt="Premium Properties by Aashna Buildwell"
+            className="w-full h-full object-cover hero-img-zoom"
+          />
+          {/* Dark gradient overlay — left heavy for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0E1B30]/95 via-[#1C2B4A]/80 to-[#1C2B4A]/25" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1C2B4A]/70 via-transparent to-transparent" />
+        </div>
 
-        {/* Right ambient glow */}
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-[#C9A444]/12 via-transparent to-transparent" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#C9A444]/5 rounded-full blur-3xl -translate-x-1/3 translate-y-1/2" />
+        {/* Decorative gold rings */}
+        <div className="absolute top-24 right-24 w-80 h-80 border border-[#C9A444]/10 rounded-full hidden xl:block pointer-events-none" />
+        <div className="absolute top-36 right-36 w-52 h-52 border border-[#C9A444]/07 rounded-full hidden xl:block pointer-events-none" />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36 md:py-44">
+          <div className="max-w-2xl">
 
-            {/* Left — Text */}
-            <div>
-              {/* Badge */}
-              <div className="animate-fade-in inline-flex items-center gap-2 bg-[#C9A444]/15 border border-[#C9A444]/30 text-[#C9A444] px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-7">
-                20+ Years of Trust
-              </div>
-
-              <h1 className="animate-fade-in-up text-4xl sm:text-5xl lg:text-[3.6rem] font-black text-white leading-[1.08] mb-6">
-                Premium Properties,<br />
-                <span className="text-gradient-gold">Built on Trust.</span>
-              </h1>
-
-              <p className="animate-fade-in-up delay-200 text-gray-300 text-lg leading-relaxed mb-10 max-w-xl">
-                Experience real estate backed by two decades of expertise —
-                delivering legally sound, quality-built residential and
-                industrial developments you can trust completely.
-              </p>
-
-              <div className="animate-fade-in-up delay-300 flex flex-col sm:flex-row gap-4">
-                <Link
-                  href="/offerings/residential/swastik-homes"
-                  className="btn-gold inline-flex items-center justify-center gap-2 px-7 py-4 text-sm"
-                >
-                  Explore Projects <ArrowRight size={16} />
-                </Link>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center gap-2 border-2 border-white/25 text-white
-                             hover:border-[#C9A444] hover:text-[#C9A444] font-bold px-7 py-4 rounded-xl text-sm
-                             transition-all duration-300"
-                >
-                  <PhoneCall size={16} /> Enquire Now
-                </Link>
-              </div>
-
-              {/* Trust indicators */}
-              <div className="animate-fade-in-up delay-400 flex flex-wrap gap-5 mt-10">
-                {[
-                  { icon: "✦", label: "RERA Approved" },
-                  { icon: "✦", label: "Clear Legal Title" },
-                  { icon: "✦", label: "20+ Years Experience" },
-                ].map((t) => (
-                  <div key={t.label} className="flex items-center gap-2 text-white/65 text-sm">
-                    <span className="text-[#C9A444] text-xs">{t.icon}</span>
-                    {t.label}
-                  </div>
-                ))}
-              </div>
+            {/* Company tag */}
+            <div className="animate-fade-in inline-flex items-center gap-2 bg-[#C9A444]/20 border border-[#C9A444]/40 text-[#C9A444] px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-8">
+              ✦ Aashna Buildwell Pvt. Ltd.
             </div>
 
-            {/* Right — Premium image placeholder */}
-            <div className="animate-slide-right delay-200">
-              <div className="relative">
-                {/* Glow ring */}
-                <div className="absolute -inset-1 rounded-3xl bg-gradient-to-br from-[#C9A444]/30 via-transparent to-[#C9A444]/15 blur-md" />
+            <h1 className="animate-fade-in-up text-5xl sm:text-6xl lg:text-[4.2rem] font-black text-white leading-[1.05] mb-6">
+              Crafting Premium<br />
+              <span className="text-gradient-gold">Homes with Purpose.</span>
+            </h1>
 
-                {/* Image slot — swap src when image is ready */}
-                <div className="relative rounded-3xl overflow-hidden shadow-[0_32px_96px_rgba(0,0,0,0.40)] border border-white/10">
-                  {/*
-                    TODO: Replace this placeholder div with:
-                    <img src="/images/swastik-homes-hero.jpg" alt="Swastik Homes by ABPL"
-                         className="w-full h-full object-cover" />
-                  */}
-                  <div className="bg-gradient-to-br from-[#243352] via-[#1C2B4A] to-[#1A2440] h-[480px] sm:h-[520px] flex flex-col items-center justify-center relative overflow-hidden">
-                    {/* Pattern overlay */}
-                    <div className="absolute inset-0"
-                      style={{
-                        backgroundImage: "radial-gradient(circle at 2px 2px, rgba(201,164,68,0.08) 1px, transparent 0)",
-                        backgroundSize: "32px 32px",
-                      }} />
+            <p className="animate-fade-in-up delay-200 text-gray-300 text-lg leading-relaxed mb-10 max-w-lg">
+              Discover 2 &amp; 3 BHK Independent Floors at Swastik Homes — where luxury,
+              legal clarity, and 20+ years of builder trust come together at NV City Sector 6.
+            </p>
 
-                    {/* Central content */}
-                    <div className="relative z-10 text-center px-8">
-                      <div className="w-24 h-24 bg-[#C9A444]/15 border border-[#C9A444]/30 rounded-2xl flex items-center justify-center mx-auto mb-5">
-                        <Building2 size={40} className="text-[#C9A444]" />
-                      </div>
-                      <p className="text-[#C9A444] font-bold text-sm uppercase tracking-widest mb-2">
-                        Swastik Homes
-                      </p>
-                      <p className="text-white/50 text-xs leading-relaxed">
-                        Project imagery coming soon
-                      </p>
-                    </div>
-
-                    {/* Floating accent card */}
-                    <div className="absolute bottom-6 left-6 right-6 bg-white/8 backdrop-blur-md border border-white/12 rounded-2xl px-5 py-4">
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <p className="text-white font-bold text-sm">Swastik Homes</p>
-                          <p className="text-[#C9A444] text-xs mt-0.5">Independent Floors — 2BHK & 3BHK</p>
-                        </div>
-                        <Link href="/offerings/residential/swastik-homes"
-                          className="btn-gold px-4 py-2 text-xs flex items-center gap-1.5 whitespace-nowrap">
-                          View <ArrowRight size={12} />
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="animate-fade-in-up delay-300 flex flex-col sm:flex-row gap-4">
+              <Link
+                href="/offerings/residential/swastik-homes"
+                className="btn-gold inline-flex items-center justify-center gap-2 px-8 py-4 text-sm"
+              >
+                Explore Swastik Homes <ArrowRight size={16} />
+              </Link>
+              <a
+                href="tel:+919630030058"
+                className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white hover:border-[#C9A444] hover:text-[#C9A444] font-bold px-8 py-4 rounded-xl text-sm transition-all duration-300"
+              >
+                <Phone size={16} /> +91 9630030058
+              </a>
             </div>
           </div>
         </div>
@@ -148,7 +81,7 @@ export default function HomePage() {
               <p className="section-tag">About Us</p>
               <h2 className="text-4xl font-black text-[#1C2B4A] mb-3 leading-tight">
                 A Legacy Built on<br />
-                <span className="text-[#C9A444]">Trust & Excellence.</span>
+                <span className="text-[#C9A444]">Trust &amp; Excellence.</span>
               </h2>
               <div className="gold-line gold-line-wide mb-7" />
 
@@ -162,12 +95,12 @@ export default function HomePage() {
               <p className="text-[#64748B] text-base leading-relaxed mb-8">
                 We believe that trust is the foundation of great real estate. Every project
                 we deliver comes with complete documentation, clear titles, and a team
-                that walks with you from booking to possession and beyond. Our buyers aren't
-                just customers — they're part of the ABPL family.
+                that walks with you from booking to possession and beyond. Our buyers
+                are part of the ABPL family.
               </p>
 
               <p className="text-[#C9A444] font-bold text-lg italic mb-8">
-                "Where Commitment Is Priority"
+                &quot;Where Commitment Is Priority&quot;
               </p>
 
               <Link href="/about"
@@ -232,14 +165,13 @@ export default function HomePage() {
               <div className="gold-line gold-line-wide mb-7" />
 
               <p className="text-[#64748B] leading-relaxed mb-8">
-                Talk to our team today. Site visits available Monday to Saturday,
-                10 AM – 6 PM. We'll help you find the right property for your
-                needs and budget.
+                Talk to our team today. Site visits available Wednesday to Monday,
+                10 AM – 6 PM (Tuesday Closed). We&apos;ll help you find the right property.
               </p>
 
               {/* Contact tiles */}
               <div className="space-y-4 mb-8">
-                <a href="tel:+919630003058"
+                <a href="tel:+919630030058"
                   className="flex items-center gap-4 p-4 border border-[#E5DECE] rounded-2xl hover:border-[#C9A444] transition-colors group bg-white shadow-sm">
                   <div className="w-12 h-12 bg-[#1C2B4A] rounded-xl flex items-center justify-center shrink-0 group-hover:bg-[#C9A444] transition-colors">
                     <Phone size={18} className="text-white" />
@@ -247,12 +179,12 @@ export default function HomePage() {
                   <div>
                     <p className="text-xs text-[#64748B] mb-0.5">Call / WhatsApp</p>
                     <p className="font-bold text-[#1C2B4A] group-hover:text-[#C9A444] transition-colors">
-                      96300 03058
+                      +91 9630030058
                     </p>
                   </div>
                 </a>
 
-                <a href="mailto:mail2abpl@gmail.com"
+                <a href="mailto:mailtoabpl@gmail.com"
                   className="flex items-center gap-4 p-4 border border-[#E5DECE] rounded-2xl hover:border-[#C9A444] transition-colors group bg-white shadow-sm">
                   <div className="w-12 h-12 bg-[#1C2B4A] rounded-xl flex items-center justify-center shrink-0 group-hover:bg-[#C9A444] transition-colors">
                     <Mail size={18} className="text-white" />
@@ -260,13 +192,13 @@ export default function HomePage() {
                   <div>
                     <p className="text-xs text-[#64748B] mb-0.5">Email Us</p>
                     <p className="font-bold text-[#1C2B4A] group-hover:text-[#C9A444] transition-colors text-sm">
-                      mail2abpl@gmail.com
+                      mailtoabpl@gmail.com
                     </p>
                   </div>
                 </a>
 
                 <a
-                  href="https://wa.me/919630003058?text=Hi+ABPL%2C+I%27m+interested+in+your+properties.+Please+share+details."
+                  href="https://wa.me/919630030058?text=Hi+ABPL%2C+I%27m+interested+in+your+properties.+Please+share+details."
                   target="_blank" rel="noopener noreferrer"
                   className="flex items-center gap-4 p-4 border border-[#E5DECE] rounded-2xl hover:border-[#25D366] transition-colors group bg-white shadow-sm">
                   <div className="w-12 h-12 bg-[#25D366] rounded-xl flex items-center justify-center shrink-0">
