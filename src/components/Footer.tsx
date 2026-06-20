@@ -1,4 +1,4 @@
-import { Phone, Mail } from "lucide-react";
+import { Phone, MapPin, Clock, Mail } from "lucide-react";
 
 const InstagramSVG = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -23,37 +23,34 @@ const FacebookSVG = () => (
 export default function Footer() {
   return (
     <footer className="bg-[#1C2B4A] text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
 
-          {/* Brand */}
-          <div className="text-center md:text-left">
-            <div className="flex items-center justify-center md:justify-start gap-3 mb-3">
-              <div className="w-10 h-10 rounded-xl bg-[#C9A444] flex items-center justify-center shadow-lg">
-                <span className="text-white font-black text-xs tracking-tight">ABPL</span>
+          {/* ── Brand column ─────────────────────── */}
+          <div className="md:col-span-2">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-12 h-12 rounded-xl bg-[#C9A444] flex items-center justify-center shadow-lg">
+                <span className="text-white font-black text-sm tracking-tight">ABPL</span>
               </div>
               <div>
-                <p className="font-bold text-base leading-tight">Aashna Buildwell Pvt. Ltd.</p>
-                <p className="text-[#C9A444] text-xs font-medium italic">&quot;Where Commitment Is Priority&quot;</p>
+                <p className="font-bold text-lg leading-tight">Aashna Buildwell</p>
+                <p className="text-[#C9A444] text-xs font-medium">Pvt. Ltd.</p>
               </div>
             </div>
-          </div>
 
-          {/* Contact + Social */}
-          <div className="flex flex-col items-center md:items-end gap-3">
-            <a
-              href="tel:+919630030058"
-              className="flex items-center gap-2 text-sm text-gray-300 hover:text-[#C9A444] transition-colors"
-            >
-              <Phone size={14} className="text-[#C9A444]" /> +91 9630030058
-            </a>
-            <a
-              href="mailto:mailtoabpl@gmail.com"
-              className="flex items-center gap-2 text-sm text-gray-300 hover:text-[#C9A444] transition-colors"
-            >
-              <Mail size={14} className="text-[#C9A444]" /> mailtoabpl@gmail.com
-            </a>
-            <div className="flex gap-2 mt-1">
+            <p className="text-gray-300 text-sm leading-relaxed mb-3 max-w-md">
+              Aashna Buildwell Pvt. Ltd. is a trusted real estate developer with over
+              20 years of excellence in delivering premium residential and industrial
+              developments. Every project is built on legal clarity, quality infrastructure,
+              and an unwavering commitment to our buyers.
+            </p>
+
+            <p className="text-[#C9A444] font-semibold text-sm italic mb-5">
+              &quot;Where Commitment Is Priority&quot;
+            </p>
+
+            {/* Social — Instagram, LinkedIn, Facebook */}
+            <div className="flex gap-2.5">
               {[
                 { href: "https://www.instagram.com/aashna__buildwell/", icon: <InstagramSVG />, label: "Instagram" },
                 { href: "https://www.linkedin.com/in/aashna-buildwell-2b1612408/", icon: <LinkedInSVG />, label: "LinkedIn" },
@@ -65,18 +62,50 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="w-8 h-8 bg-white/10 hover:bg-[#C9A444] rounded-lg flex items-center justify-center transition-all duration-200 hover:scale-105 text-white"
+                  className="w-9 h-9 bg-white/10 hover:bg-[#C9A444] rounded-xl flex items-center justify-center
+                             transition-all duration-200 hover:scale-105 text-white"
                 >
                   {s.icon}
                 </a>
               ))}
             </div>
           </div>
+
+          {/* ── Contact column ───────────────────── */}
+          <div>
+            <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-5 flex items-center gap-2">
+              <span className="w-5 h-0.5 bg-[#C9A444] inline-block" />
+              Contact Us
+            </h4>
+            <ul className="space-y-4">
+              <li className="flex gap-3 text-sm text-gray-300">
+                <MapPin size={15} className="text-[#C9A444] shrink-0 mt-0.5" />
+                <span className="leading-relaxed">B-604, Parker White Lily Residency, Sector 27, Sonipat</span>
+              </li>
+              <li className="flex gap-3 text-sm text-gray-300">
+                <Clock size={15} className="text-[#C9A444] shrink-0 mt-0.5" />
+                <span className="leading-relaxed">Wed – Mon: 10:00 AM – 6:00 PM<br />Tuesday: Closed</span>
+              </li>
+              <li className="flex gap-3 text-sm">
+                <Phone size={15} className="text-[#C9A444] shrink-0 mt-0.5" />
+                <a href="tel:+919630030058" className="text-gray-300 hover:text-[#C9A444] transition-colors">
+                  +91 9630030058
+                </a>
+              </li>
+              <li className="flex gap-3 text-sm">
+                <Mail size={15} className="text-[#C9A444] shrink-0 mt-0.5" />
+                <a href="mailto:mailtoabpl@gmail.com" className="text-gray-300 hover:text-[#C9A444] transition-colors">
+                  mailtoabpl@gmail.com
+                </a>
+              </li>
+            </ul>
+          </div>
+
         </div>
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-white/10 py-4">
+      <div className="border-t border-white/10 py-5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-2 text-xs text-gray-400">
           <p>© {new Date().getFullYear()} ABPL – Aashna Buildwell Pvt. Ltd. All rights reserved.</p>
           <p className="text-gray-500">RERA Approved | Premium Real Estate Developer</p>
