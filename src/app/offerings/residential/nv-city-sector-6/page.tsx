@@ -170,7 +170,7 @@ export default function NVCityPage() {
             <h2 className="text-3xl font-black text-white mb-2">Enquire About NV City Sector 6</h2>
             <p className="text-gray-400">Submit your details and our team will call you within 2 hours.</p>
           </div>
-          <LeadForm projectContext="NV City Sector 6" />
+          <LeadForm />
         </div>
       </section>
     </>

@@ -85,7 +85,7 @@ export default function NextraCityPage() {
             <h2 className="text-3xl font-black text-white mb-2">Enquire About Nextra City</h2>
             <p className="text-gray-400">Get pricing, plot details, and brochure delivered to your WhatsApp.</p>
           </div>
-          <LeadForm projectContext="Nextra City — Residential Plot" />
+          <LeadForm />
         </div>
       </section>
     </>

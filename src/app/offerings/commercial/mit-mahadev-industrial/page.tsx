@@ -78,7 +78,7 @@ export default function MITPage() {
             <h2 className="text-3xl font-black text-white mb-2">Enquire About MIT Township</h2>
             <p className="text-gray-400">Get pricing, plot sizes, and investment details for MIT Mahadev Industrial Township.</p>
           </div>
-          <LeadForm projectContext="MIT Mahadev — Commercial / Industrial" />
+          <LeadForm />
         </div>
       </section>
     </>

@@ -2,18 +2,10 @@
 import { useState } from "react";
 import { Phone, User, MapPin, Send, CheckCircle } from "lucide-react";
 
-interface LeadFormProps {
-  title?: string;
-  subtitle?: string;
-  projectContext?: string;
-}
-
-export default function LeadForm({
-  projectContext = "General Enquiry",
-}: LeadFormProps) {
+export default function LeadForm() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [form, setForm] = useState({ name: "", phone: "", city: "", interest: projectContext, message: "" });
+  const [form, setForm] = useState({ name: "", phone: "", city: "", message: "" });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -34,8 +26,11 @@ export default function LeadForm({
           Our team will call you within 2 business hours.
         </p>
         <a
-          href={`https://wa.me/919999999999?text=${encodeURIComponent(`Hi ABPL, I just submitted an enquiry about ${form.interest}. My name is ${form.name}.`)}`}
-          target="_blank" rel="noopener noreferrer"
+          href={`https://wa.me/919630003058?text=${encodeURIComponent(
+            `Hi ABPL, I just submitted an enquiry. My name is ${form.name}.`
+          )}`}
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex items-center gap-2 bg-[#25D366] text-white px-5 py-2.5 rounded-xl font-semibold text-sm hover:bg-[#20B857] transition-colors"
         >
           Chat on WhatsApp Now
@@ -93,20 +88,6 @@ export default function LeadForm({
         </select>
       </div>
 
-      {/* Interest */}
-      <select
-        value={form.interest}
-        onChange={(e) => setForm({ ...form, interest: e.target.value })}
-        className="w-full px-4 py-3 border border-[#E5DECE] rounded-xl text-sm focus:outline-none focus:border-[#C9A444] focus:ring-2 focus:ring-[#C9A444]/20 bg-white text-[#64748B]"
-      >
-        <option>NV City I</option>
-        <option>NV City Sector 10A</option>
-        <option>NV City II – Sector 6</option>
-        <option>NV City III – Sector 6</option>
-        <option>MIT – Malwa Industrial Township</option>
-        <option>General Enquiry</option>
-      </select>
-
       {/* Message */}
       <textarea
         placeholder="Any questions? (Optional)"
@@ -129,7 +110,7 @@ export default function LeadForm({
       </button>
 
       <p className="text-center text-xs text-gray-400">
-        🔒 Your details are safe. We don't spam.
+        🔒 Your details are safe. We don&apos;t spam.
       </p>
     </form>
   );

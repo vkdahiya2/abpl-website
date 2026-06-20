@@ -1,108 +1,127 @@
 import Link from "next/link";
+import { Phone, ArrowRight, CheckCircle, Award, Users, Building2, Mail, PhoneCall } from "lucide-react";
 import LeadForm from "@/components/LeadForm";
-import { MapPin, Phone, ArrowRight, CheckCircle, Home, Factory, Award, Users, Building2 } from "lucide-react";
-
-const residentialProjects = [
-  {
-    name: "NV City I",
-    tag: "Residential Plots",
-    location: "Kharkhoda, Haryana",
-    highlights: ["DTCP Approved", "Gated Society", "Clear Title", "Wide Roads"],
-    href: "/offerings/residential/nv-city-i",
-  },
-  {
-    name: "NV City Sector 10A",
-    tag: "Residential Plots",
-    location: "Kharkhoda, Haryana",
-    highlights: ["Premium Layout", "Park & Amenities", "Legal Clear", "KMP Corridor"],
-    href: "/offerings/residential/nv-city-sector-10a",
-  },
-  {
-    name: "NV City II",
-    tag: "Sector 6 · Kharkhoda",
-    location: "Kharkhoda, Haryana",
-    highlights: ["130 sq.yd Plots", "179 sq.yd Plots", "Gated Entry", "DTCP Approved"],
-    href: "/offerings/residential/nv-city-ii-sector-6",
-    featured: true,
-  },
-  {
-    name: "NV City III",
-    tag: "Sector 6 · Kharkhoda",
-    location: "Kharkhoda, Haryana",
-    highlights: ["Premium Plots", "Gated Society", "Paved Roads", "Clear Title"],
-    href: "/offerings/residential/nv-city-iii-sector-6",
-  },
-];
 
 export default function HomePage() {
   return (
     <>
       {/* ══════════════════════════════════════════════════
-          HERO
+          HERO — Full width, no lead form, premium visual
       ══════════════════════════════════════════════════ */}
-      <section className="relative bg-[#1C2B4A] min-h-[92vh] flex items-center overflow-hidden">
+      <section className="relative bg-[#1C2B4A] min-h-[90vh] flex items-center overflow-hidden">
 
-        {/* Subtle grid pattern */}
-        <div className="absolute inset-0 opacity-[0.06]"
+        {/* Subtle gold grid */}
+        <div className="absolute inset-0 opacity-[0.055]"
           style={{
             backgroundImage: "linear-gradient(#C9A444 1px, transparent 1px), linear-gradient(90deg, #C9A444 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
+            backgroundSize: "64px 64px",
           }} />
 
-        {/* Gold gradient blob */}
-        <div className="absolute top-0 right-0 w-[45%] h-full bg-gradient-to-bl from-[#C9A444]/15 via-transparent to-transparent" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#C9A444]/5 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2" />
+        {/* Right ambient glow */}
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-[#C9A444]/12 via-transparent to-transparent" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#C9A444]/5 rounded-full blur-3xl -translate-x-1/3 translate-y-1/2" />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 grid lg:grid-cols-2 gap-16 items-center">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-          {/* Left — Text */}
-          <div className="animate-fade-in-up">
-            <div className="inline-flex items-center gap-2 bg-[#C9A444]/15 border border-[#C9A444]/30 text-[#C9A444] px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
-              DTCP Approved &nbsp;·&nbsp; 20+ Years of Trust
+            {/* Left — Text */}
+            <div>
+              {/* Badge */}
+              <div className="animate-fade-in inline-flex items-center gap-2 bg-[#C9A444]/15 border border-[#C9A444]/30 text-[#C9A444] px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-7">
+                20+ Years of Trust
+              </div>
+
+              <h1 className="animate-fade-in-up text-4xl sm:text-5xl lg:text-[3.6rem] font-black text-white leading-[1.08] mb-6">
+                Premium Properties,<br />
+                <span className="text-gradient-gold">Built on Trust.</span>
+              </h1>
+
+              <p className="animate-fade-in-up delay-200 text-gray-300 text-lg leading-relaxed mb-10 max-w-xl">
+                Experience real estate backed by two decades of expertise —
+                delivering legally sound, quality-built residential and
+                industrial developments you can trust completely.
+              </p>
+
+              <div className="animate-fade-in-up delay-300 flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="/offerings/residential/swastik-homes"
+                  className="btn-gold inline-flex items-center justify-center gap-2 px-7 py-4 text-sm"
+                >
+                  Explore Projects <ArrowRight size={16} />
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-2 border-2 border-white/25 text-white
+                             hover:border-[#C9A444] hover:text-[#C9A444] font-bold px-7 py-4 rounded-xl text-sm
+                             transition-all duration-300"
+                >
+                  <PhoneCall size={16} /> Enquire Now
+                </Link>
+              </div>
+
+              {/* Trust indicators */}
+              <div className="animate-fade-in-up delay-400 flex flex-wrap gap-5 mt-10">
+                {[
+                  { icon: "✦", label: "RERA Approved" },
+                  { icon: "✦", label: "Clear Legal Title" },
+                  { icon: "✦", label: "20+ Years Experience" },
+                ].map((t) => (
+                  <div key={t.label} className="flex items-center gap-2 text-white/65 text-sm">
+                    <span className="text-[#C9A444] text-xs">{t.icon}</span>
+                    {t.label}
+                  </div>
+                ))}
+              </div>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-[1.12] mb-6">
-              Build Your Future<br />
-              <span className="text-gradient-gold">in Kharkhoda.</span>
-            </h1>
+            {/* Right — Premium image placeholder */}
+            <div className="animate-slide-right delay-200">
+              <div className="relative">
+                {/* Glow ring */}
+                <div className="absolute -inset-1 rounded-3xl bg-gradient-to-br from-[#C9A444]/30 via-transparent to-[#C9A444]/15 blur-md" />
 
-            <p className="text-gray-300 text-lg leading-relaxed mb-10 max-w-lg">
-              Premium residential plots and industrial township in Haryana's fastest-growing corridor —
-              with full legal clarity and over two decades of builder trust behind every project.
-            </p>
+                {/* Image slot — swap src when image is ready */}
+                <div className="relative rounded-3xl overflow-hidden shadow-[0_32px_96px_rgba(0,0,0,0.40)] border border-white/10">
+                  {/*
+                    TODO: Replace this placeholder div with:
+                    <img src="/images/swastik-homes-hero.jpg" alt="Swastik Homes by ABPL"
+                         className="w-full h-full object-cover" />
+                  */}
+                  <div className="bg-gradient-to-br from-[#243352] via-[#1C2B4A] to-[#1A2440] h-[480px] sm:h-[520px] flex flex-col items-center justify-center relative overflow-hidden">
+                    {/* Pattern overlay */}
+                    <div className="absolute inset-0"
+                      style={{
+                        backgroundImage: "radial-gradient(circle at 2px 2px, rgba(201,164,68,0.08) 1px, transparent 0)",
+                        backgroundSize: "32px 32px",
+                      }} />
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/offerings/residential/nv-city-ii-sector-6"
-                className="btn-gold inline-flex items-center justify-center gap-2 px-7 py-4 text-sm">
-                Explore Projects <ArrowRight size={16} />
-              </Link>
-              <a href="tel:+919999999999"
-                className="inline-flex items-center justify-center gap-2 border-2 border-white/25 text-white hover:border-[#C9A444] hover:text-[#C9A444] font-bold px-7 py-4 rounded-xl text-sm transition-all duration-200">
-                <Phone size={16} /> Call Now
-              </a>
-            </div>
+                    {/* Central content */}
+                    <div className="relative z-10 text-center px-8">
+                      <div className="w-24 h-24 bg-[#C9A444]/15 border border-[#C9A444]/30 rounded-2xl flex items-center justify-center mx-auto mb-5">
+                        <Building2 size={40} className="text-[#C9A444]" />
+                      </div>
+                      <p className="text-[#C9A444] font-bold text-sm uppercase tracking-widest mb-2">
+                        Swastik Homes
+                      </p>
+                      <p className="text-white/50 text-xs leading-relaxed">
+                        Project imagery coming soon
+                      </p>
+                    </div>
 
-            {/* Location chips */}
-            <div className="flex flex-wrap gap-2 mt-8">
-              {["Kharkhoda", "Sonipat", "Delhi NCR", "KMP Corridor"].map((loc) => (
-                <span key={loc} className="inline-flex items-center gap-1.5 bg-white/8 border border-white/15 text-white/70 text-xs px-3 py-1.5 rounded-full">
-                  <MapPin size={10} /> {loc}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Right — Lead Form */}
-          <div className="animate-slide-right delay-200">
-            <div className="relative">
-              <div className="absolute -inset-px rounded-2xl bg-gradient-to-br from-[#C9A444]/40 via-transparent to-[#C9A444]/20 blur-sm" />
-              <div className="relative bg-white rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.25)] overflow-hidden">
-                <div className="bg-gradient-to-r from-[#1C2B4A] to-[#243352] px-6 py-4">
-                  <p className="text-white font-bold text-base">Get Free Site Details</p>
-                  <p className="text-[#C9A444] text-xs mt-0.5">We'll call you back within 2 hours.</p>
-                </div>
-                <div className="p-6">
-                  <LeadForm />
+                    {/* Floating accent card */}
+                    <div className="absolute bottom-6 left-6 right-6 bg-white/8 backdrop-blur-md border border-white/12 rounded-2xl px-5 py-4">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <p className="text-white font-bold text-sm">Swastik Homes</p>
+                          <p className="text-[#C9A444] text-xs mt-0.5">Independent Floors — 2BHK & 3BHK</p>
+                        </div>
+                        <Link href="/offerings/residential/swastik-homes"
+                          className="btn-gold px-4 py-2 text-xs flex items-center gap-1.5 whitespace-nowrap">
+                          View <ArrowRight size={12} />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -120,24 +139,31 @@ export default function HomePage() {
       {/* ══════════════════════════════════════════════════
           ABOUT US
       ══════════════════════════════════════════════════ */}
-      <section id="about" className="py-24 bg-white">
+      <section id="about" className="py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
 
             {/* Left — Content */}
-            <div className="animate-slide-left">
+            <div className="reveal reveal-left">
               <p className="section-tag">About Us</p>
               <h2 className="text-4xl font-black text-[#1C2B4A] mb-3 leading-tight">
-                Two Decades of Building<br />
-                <span className="text-[#C9A444]">Homes & Trust.</span>
+                A Legacy Built on<br />
+                <span className="text-[#C9A444]">Trust & Excellence.</span>
               </h2>
-              <div className="gold-line gold-line-wide mb-6" />
+              <div className="gold-line gold-line-wide mb-7" />
 
-              <p className="text-[#64748B] text-base leading-relaxed mb-6">
-                Aashna Buildwell Pvt. Ltd. (ABPL) is a real estate developer with <strong className="text-[#1C2B4A]">over 20 years of experience</strong> in creating premium plotted developments across Haryana and the NCR belt.
+              <p className="text-[#64748B] text-base leading-relaxed mb-5">
+                Aashna Buildwell Pvt. Ltd. (ABPL) is a trusted real estate developer with{" "}
+                <strong className="text-[#1C2B4A]">over 20 years of experience</strong> in delivering premium
+                residential and industrial developments. We specialize in RERA-approved plotted
+                societies, independent floors, and integrated townships — each crafted with
+                meticulous legal clarity and a commitment to lasting quality.
               </p>
               <p className="text-[#64748B] text-base leading-relaxed mb-8">
-                We believe in one thing above all else — <strong className="text-[#1C2B4A]">trust</strong>. Every project we develop comes with full legal clarity, DTCP approval, and a commitment that extends long after you take possession. Our buyers aren't just customers — they're part of the ABPL family.
+                We believe that trust is the foundation of great real estate. Every project
+                we deliver comes with complete documentation, clear titles, and a team
+                that walks with you from booking to possession and beyond. Our buyers aren't
+                just customers — they're part of the ABPL family.
               </p>
 
               <p className="text-[#C9A444] font-bold text-lg italic mb-8">
@@ -151,20 +177,36 @@ export default function HomePage() {
               </Link>
             </div>
 
-            {/* Right — Values cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 animate-slide-right delay-200">
+            {/* Right — Value cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 stagger-reveal">
               {[
-                { icon: <Award size={22} className="text-[#C9A444]" />, title: "20+ Years", desc: "Trusted experience in real estate development across Haryana" },
-                { icon: <CheckCircle size={22} className="text-[#C9A444]" />, title: "DTCP Approved", desc: "Every project is government-approved with zero legal risk" },
-                { icon: <Building2 size={22} className="text-[#C9A444]" />, title: "Clear Title", desc: "100% transparent documentation and registry in your name" },
-                { icon: <Users size={22} className="text-[#C9A444]" />, title: "Buyer First", desc: "No hidden charges. No false promises. Just commitment." },
+                {
+                  icon: <Award size={22} className="text-[#C9A444]" />,
+                  title: "20+ Years Experience",
+                  desc: "Two decades of trusted real estate development with a strong track record of quality and delivery.",
+                },
+                {
+                  icon: <CheckCircle size={22} className="text-[#C9A444]" />,
+                  title: "RERA Approved",
+                  desc: "All projects comply with RERA guidelines — zero legal complications, complete transparency.",
+                },
+                {
+                  icon: <Building2 size={22} className="text-[#C9A444]" />,
+                  title: "Clear Title",
+                  desc: "100% transparent documentation with direct registry in the buyer's name.",
+                },
+                {
+                  icon: <Users size={22} className="text-[#C9A444]" />,
+                  title: "Buyer First",
+                  desc: "No hidden charges. No false promises. Every commitment we make, we keep.",
+                },
               ].map((v) => (
                 <div key={v.title}
-                  className="card-hover bg-white border border-[#E5DECE] rounded-2xl p-6 shadow-sm">
-                  <div className="w-11 h-11 rounded-xl bg-[#F8F5EF] flex items-center justify-center mb-4">
+                  className="reveal reveal-scale card-hover shimmer-hover bg-white border border-[#E5DECE] rounded-2xl p-6 shadow-sm">
+                  <div className="w-11 h-11 rounded-xl bg-[#F8F5EF] flex items-center justify-center mb-4 border border-[#E5DECE]">
                     {v.icon}
                   </div>
-                  <h3 className="font-bold text-[#1C2B4A] mb-1.5">{v.title}</h3>
+                  <h3 className="font-bold text-[#1C2B4A] mb-1.5 text-sm">{v.title}</h3>
                   <p className="text-[#64748B] text-sm leading-relaxed">{v.desc}</p>
                 </div>
               ))}
@@ -174,183 +216,59 @@ export default function HomePage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          OUR OFFERINGS — RESIDENTIAL
+          CONTACT — Get In Touch
       ══════════════════════════════════════════════════ */}
-      <section id="offerings" className="py-24 bg-[#F8F5EF]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-          {/* Heading */}
-          <div className="text-center mb-16">
-            <p className="section-tag">Our Offerings</p>
-            <h2 className="text-4xl font-black text-[#1C2B4A] mb-3">
-              Projects Designed for Your Future
-            </h2>
-            <div className="gold-line gold-line-wide mx-auto" />
-          </div>
-
-          {/* Residential label */}
-          <div className="flex items-center gap-4 mb-8">
-            <div className="flex items-center gap-2.5 bg-white border border-[#E5DECE] px-4 py-2 rounded-xl shadow-sm">
-              <div className="w-7 h-7 rounded-lg bg-[#F8F5EF] flex items-center justify-center">
-                <Home size={14} className="text-[#C9A444]" />
-              </div>
-              <span className="text-[#1C2B4A] font-bold text-sm">Residential Projects</span>
-            </div>
-            <div className="flex-1 h-px bg-[#E5DECE]" />
-          </div>
-
-          {/* Residential grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-16">
-            {residentialProjects.map((p, i) => (
-              <div key={p.name}
-                className={`card-hover bg-white rounded-2xl overflow-hidden border shadow-sm ${
-                  p.featured ? "border-[#C9A444] ring-1 ring-[#C9A444]/30" : "border-[#E5DECE]"
-                } animate-fade-in-up delay-${(i + 1) * 100}`}>
-
-                {/* Image placeholder / gradient */}
-                <div className="relative h-44 bg-gradient-to-br from-[#1C2B4A] to-[#243352] flex items-center justify-center overflow-hidden">
-                  <div className="absolute inset-0 opacity-10"
-                    style={{
-                      backgroundImage: "linear-gradient(45deg, #C9A444 25%, transparent 25%, transparent 75%, #C9A444 75%), linear-gradient(45deg, #C9A444 25%, transparent 25%, transparent 75%, #C9A444 75%)",
-                      backgroundSize: "20px 20px",
-                      backgroundPosition: "0 0, 10px 10px",
-                    }} />
-                  {/* Placeholder — replace with actual project image */}
-                  <div className="text-center relative z-10">
-                    <div className="text-5xl mb-2">🏘️</div>
-                    <p className="text-[#C9A444] text-xs font-bold tracking-widest uppercase">{p.tag}</p>
-                  </div>
-                  {p.featured && (
-                    <span className="absolute top-3 right-3 bg-[#C9A444] text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wide">
-                      Popular
-                    </span>
-                  )}
-                </div>
-
-                {/* Content */}
-                <div className="p-5">
-                  <h3 className="text-lg font-black text-[#1C2B4A] mb-0.5">{p.name}</h3>
-                  <p className="text-[#C9A444] text-xs font-medium mb-3 flex items-center gap-1">
-                    <MapPin size={10} /> {p.location}
-                  </p>
-
-                  <ul className="space-y-1.5 mb-4">
-                    {p.highlights.map((h) => (
-                      <li key={h} className="flex items-center gap-2 text-xs text-[#64748B]">
-                        <CheckCircle size={11} className="text-[#C9A444] shrink-0" /> {h}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <Link href={p.href}
-                    className="inline-flex items-center gap-1.5 text-[#1C2B4A] hover:text-[#C9A444] font-semibold text-xs transition-colors group">
-                    View Details <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Industrial label */}
-          <div className="flex items-center gap-4 mb-8">
-            <div className="flex items-center gap-2.5 bg-white border border-[#E5DECE] px-4 py-2 rounded-xl shadow-sm">
-              <div className="w-7 h-7 rounded-lg bg-[#F8F5EF] flex items-center justify-center">
-                <Factory size={14} className="text-[#C9A444]" />
-              </div>
-              <span className="text-[#1C2B4A] font-bold text-sm">Industrial Projects</span>
-            </div>
-            <div className="flex-1 h-px bg-[#E5DECE]" />
-          </div>
-
-          {/* MIT Card */}
-          <div className="card-hover bg-gradient-to-r from-[#1C2B4A] to-[#243352] rounded-2xl overflow-hidden shadow-xl border border-[#243352]">
-            <div className="grid lg:grid-cols-5 gap-0">
-
-              {/* Visual */}
-              <div className="lg:col-span-2 relative flex items-center justify-center p-12 bg-gradient-to-br from-[#1C2B4A] via-[#243352] to-[#1A2540] overflow-hidden">
-                <div className="absolute inset-0 opacity-10"
-                  style={{
-                    backgroundImage: "linear-gradient(#C9A444 1px, transparent 1px), linear-gradient(90deg, #C9A444 1px, transparent 1px)",
-                    backgroundSize: "30px 30px",
-                  }} />
-                <div className="relative text-center">
-                  <div className="text-8xl animate-float">🏭</div>
-                  <p className="text-[#C9A444] text-xs font-bold tracking-widest uppercase mt-3">Industrial Township</p>
-                </div>
-              </div>
-
-              {/* Content */}
-              <div className="lg:col-span-3 p-8 sm:p-10 flex flex-col justify-center">
-                <span className="inline-block bg-[#C9A444]/20 border border-[#C9A444]/40 text-[#C9A444] text-xs font-bold px-3 py-1 rounded-full mb-4 w-fit uppercase tracking-wide">
-                  ⚙ Malwa Industrial Township
-                </span>
-                <h3 className="text-2xl sm:text-3xl font-black text-white mb-3">
-                  MIT — Industrial & Commercial Plots
-                </h3>
-                <p className="text-gray-300 text-sm leading-relaxed mb-6 max-w-lg">
-                  Strategically located industrial and commercial plots built for businesses, manufacturing units, and institutional buyers.
-                  Prime highway connectivity, infrastructure-ready, with legal clear titles and excellent growth potential.
-                </p>
-
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-7">
-                  {[
-                    "Industrial Plots",
-                    "Commercial Plots",
-                    "Highway Access",
-                    "Tax Benefits",
-                  ].map((f) => (
-                    <div key={f} className="flex items-center gap-2 text-xs text-gray-300">
-                      <CheckCircle size={12} className="text-[#C9A444] shrink-0" /> {f}
-                    </div>
-                  ))}
-                </div>
-
-                <Link href="/offerings/industrial/mit-malwa-industrial"
-                  className="btn-gold inline-flex items-center gap-2 px-6 py-3 text-sm w-fit">
-                  Explore MIT Township <ArrowRight size={15} />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════════
-          CONTACT
-      ══════════════════════════════════════════════════ */}
-      <section id="contact" className="py-24 bg-white">
+      <section id="contact" className="py-28 bg-[#F8F5EF]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
 
-            {/* Left — CTA */}
-            <div className="animate-slide-left">
+            {/* Left — CTA info */}
+            <div className="reveal reveal-left">
               <p className="section-tag">Get In Touch</p>
               <h2 className="text-4xl font-black text-[#1C2B4A] mb-3 leading-tight">
                 Ready to Take the<br />
                 <span className="text-[#C9A444]">Next Step?</span>
               </h2>
-              <div className="gold-line gold-line-wide mb-6" />
+              <div className="gold-line gold-line-wide mb-7" />
 
               <p className="text-[#64748B] leading-relaxed mb-8">
-                Talk to our team today. Site visits available Monday to Saturday, 10 AM – 6 PM.
-                We'll help you find the right plot for your needs and budget.
+                Talk to our team today. Site visits available Monday to Saturday,
+                10 AM – 6 PM. We'll help you find the right property for your
+                needs and budget.
               </p>
 
+              {/* Contact tiles */}
               <div className="space-y-4 mb-8">
-                <a href="tel:+919999999999"
-                  className="flex items-center gap-4 p-4 border border-[#E5DECE] rounded-2xl hover:border-[#C9A444] transition-colors group bg-[#F8F5EF]/50">
+                <a href="tel:+919630003058"
+                  className="flex items-center gap-4 p-4 border border-[#E5DECE] rounded-2xl hover:border-[#C9A444] transition-colors group bg-white shadow-sm">
                   <div className="w-12 h-12 bg-[#1C2B4A] rounded-xl flex items-center justify-center shrink-0 group-hover:bg-[#C9A444] transition-colors">
                     <Phone size={18} className="text-white" />
                   </div>
                   <div>
-                    <p className="text-xs text-[#64748B] mb-0.5">Call Us</p>
-                    <p className="font-bold text-[#1C2B4A] group-hover:text-[#C9A444] transition-colors">+91 99999 99999</p>
+                    <p className="text-xs text-[#64748B] mb-0.5">Call / WhatsApp</p>
+                    <p className="font-bold text-[#1C2B4A] group-hover:text-[#C9A444] transition-colors">
+                      96300 03058
+                    </p>
                   </div>
                 </a>
 
-                <a href="https://wa.me/919999999999?text=Hi+ABPL,+I%27m+interested+in+your+plots."
+                <a href="mailto:mail2abpl@gmail.com"
+                  className="flex items-center gap-4 p-4 border border-[#E5DECE] rounded-2xl hover:border-[#C9A444] transition-colors group bg-white shadow-sm">
+                  <div className="w-12 h-12 bg-[#1C2B4A] rounded-xl flex items-center justify-center shrink-0 group-hover:bg-[#C9A444] transition-colors">
+                    <Mail size={18} className="text-white" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-[#64748B] mb-0.5">Email Us</p>
+                    <p className="font-bold text-[#1C2B4A] group-hover:text-[#C9A444] transition-colors text-sm">
+                      mail2abpl@gmail.com
+                    </p>
+                  </div>
+                </a>
+
+                <a
+                  href="https://wa.me/919630003058?text=Hi+ABPL%2C+I%27m+interested+in+your+properties.+Please+share+details."
                   target="_blank" rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 border border-[#E5DECE] rounded-2xl hover:border-[#25D366] transition-colors group bg-[#F8F5EF]/50">
+                  className="flex items-center gap-4 p-4 border border-[#E5DECE] rounded-2xl hover:border-[#25D366] transition-colors group bg-white shadow-sm">
                   <div className="w-12 h-12 bg-[#25D366] rounded-xl flex items-center justify-center shrink-0">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
                       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
@@ -359,7 +277,9 @@ export default function HomePage() {
                   </div>
                   <div>
                     <p className="text-xs text-[#64748B] mb-0.5">WhatsApp</p>
-                    <p className="font-bold text-[#1C2B4A] group-hover:text-[#25D366] transition-colors">Chat with Us</p>
+                    <p className="font-bold text-[#1C2B4A] group-hover:text-[#25D366] transition-colors">
+                      Chat with Us
+                    </p>
                   </div>
                 </a>
               </div>
@@ -370,9 +290,9 @@ export default function HomePage() {
               </Link>
             </div>
 
-            {/* Right — Form */}
-            <div className="animate-slide-right delay-200">
-              <div className="bg-[#F8F5EF] rounded-2xl p-8 border border-[#E5DECE]">
+            {/* Right — Enquiry form */}
+            <div className="reveal reveal-right delay-200">
+              <div className="bg-white rounded-2xl p-8 border border-[#E5DECE] shadow-sm">
                 <h3 className="font-bold text-[#1C2B4A] text-lg mb-1">Send an Enquiry</h3>
                 <p className="text-[#64748B] text-sm mb-6">Our team will get back to you within 24 hours.</p>
                 <LeadForm />

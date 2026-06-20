@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import LeadForm from "@/components/LeadForm";
-import { MapPin, Phone, Clock } from "lucide-react";
+import { MapPin, Phone, Clock, Mail } from "lucide-react";
 
 const InstagramSVG = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -19,74 +19,116 @@ const FacebookSVG = () => (
 );
 
 export const metadata: Metadata = {
-  title: "Contact Us — Book a Site Visit",
-  description: "Contact ABPL – Aashna Buildwell Pvt. Ltd. Book a free site visit to NV City Sector 6 or any of our projects. Call us, WhatsApp us, or fill the form.",
+  title: "Contact Us — ABPL, Aashna Buildwell Pvt. Ltd.",
+  description: "Contact ABPL – Aashna Buildwell Pvt. Ltd. Book a free site visit, call us, WhatsApp us, or fill the enquiry form. Our team responds within 24 hours.",
 };
 
 export default function ContactPage() {
   return (
     <>
-      <section className="bg-[#0A1D3A] py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-black text-white mb-3">Contact Us</h1>
-          <p className="text-gray-400 max-w-xl mx-auto">
-            Talk to our team. Book a free site visit. We're available Mon–Sat, 10 AM – 6 PM.
+      {/* Hero */}
+      <section className="relative bg-[#1C2B4A] py-20 overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.05]"
+          style={{
+            backgroundImage: "linear-gradient(#C9A444 1px, transparent 1px), linear-gradient(90deg, #C9A444 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+          }} />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <p className="section-tag animate-fade-in">Get In Touch</p>
+          <h1 className="animate-fade-in-up text-4xl md:text-5xl font-black text-white mb-4">
+            Contact Us
+          </h1>
+          <p className="animate-fade-in-up delay-200 text-gray-300 text-lg max-w-xl mx-auto">
+            Talk to our team. Book a free site visit. We&apos;re available Mon–Sat, 10 AM – 6 PM.
           </p>
-          <div className="w-14 h-1 bg-[#B8972E] rounded mx-auto mt-4" />
+          <div className="w-16 h-1 bg-[#C9A444] rounded mx-auto mt-5" />
+        </div>
+        <div className="absolute bottom-0 left-0 right-0">
+          <svg viewBox="0 0 1440 50" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full h-[35px]">
+            <path d="M0 50L1440 50L1440 15C1200 50 960 0 720 15C480 30 240 0 0 15L0 50Z" fill="#FFFFFF"/>
+          </svg>
         </div>
       </section>
 
+      {/* Main contact section */}
       <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12">
-          {/* Contact info */}
-          <div>
-            <h2 className="text-2xl font-bold text-[#0A1D3A] mb-6">Get in Touch</h2>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-14">
+
+          {/* Left — contact info */}
+          <div className="reveal reveal-left">
+            <h2 className="text-2xl font-bold text-[#1C2B4A] mb-7">Get in Touch</h2>
+
             <div className="space-y-5 mb-8">
-              <div className="flex gap-4 items-start">
-                <div className="w-11 h-11 bg-[#EEF2F7] rounded-xl flex items-center justify-center shrink-0">
-                  <MapPin size={20} className="text-[#B8972E]" />
+              {/* Address */}
+              <div className="flex gap-4 items-start p-4 bg-[#F8F5EF] rounded-2xl border border-[#E5DECE]">
+                <div className="w-11 h-11 bg-[#1C2B4A] rounded-xl flex items-center justify-center shrink-0">
+                  <MapPin size={18} className="text-[#C9A444]" />
                 </div>
                 <div>
-                  <p className="font-bold text-[#0A1D3A] text-sm">Office Address</p>
-                  <p className="text-gray-600 text-sm mt-0.5">B-604, Parker White Lily Residency, Sector 27</p>
+                  <p className="font-bold text-[#1C2B4A] text-sm mb-0.5">Office Address</p>
+                  <p className="text-[#64748B] text-sm">Parkar White Lily Agency, Sector 27</p>
                 </div>
               </div>
-              <div className="flex gap-4 items-start">
-                <div className="w-11 h-11 bg-[#EEF2F7] rounded-xl flex items-center justify-center shrink-0">
-                  <Phone size={20} className="text-[#B8972E]" />
+
+              {/* Phone */}
+              <div className="flex gap-4 items-start p-4 bg-[#F8F5EF] rounded-2xl border border-[#E5DECE]">
+                <div className="w-11 h-11 bg-[#1C2B4A] rounded-xl flex items-center justify-center shrink-0">
+                  <Phone size={18} className="text-[#C9A444]" />
                 </div>
                 <div>
-                  <p className="font-bold text-[#0A1D3A] text-sm">Call / WhatsApp</p>
-                  <a href="tel:+919999999999" className="text-[#B8972E] font-semibold text-sm">+91 99999 99999</a>
+                  <p className="font-bold text-[#1C2B4A] text-sm mb-0.5">Call / WhatsApp</p>
+                  <a href="tel:+919630003058" className="text-[#C9A444] font-semibold text-sm hover:underline">
+                    96300 03058
+                  </a>
                 </div>
               </div>
-              <div className="flex gap-4 items-start">
-                <div className="w-11 h-11 bg-[#EEF2F7] rounded-xl flex items-center justify-center shrink-0">
-                  <Clock size={20} className="text-[#B8972E]" />
+
+              {/* Email */}
+              <div className="flex gap-4 items-start p-4 bg-[#F8F5EF] rounded-2xl border border-[#E5DECE]">
+                <div className="w-11 h-11 bg-[#1C2B4A] rounded-xl flex items-center justify-center shrink-0">
+                  <Mail size={18} className="text-[#C9A444]" />
                 </div>
                 <div>
-                  <p className="font-bold text-[#0A1D3A] text-sm">Office Hours</p>
-                  <p className="text-gray-600 text-sm mt-0.5">Monday – Saturday: 10:00 AM – 6:00 PM</p>
+                  <p className="font-bold text-[#1C2B4A] text-sm mb-0.5">Email Us</p>
+                  <a href="mailto:mail2abpl@gmail.com" className="text-[#C9A444] font-semibold text-sm hover:underline">
+                    mail2abpl@gmail.com
+                  </a>
+                </div>
+              </div>
+
+              {/* Hours */}
+              <div className="flex gap-4 items-start p-4 bg-[#F8F5EF] rounded-2xl border border-[#E5DECE]">
+                <div className="w-11 h-11 bg-[#1C2B4A] rounded-xl flex items-center justify-center shrink-0">
+                  <Clock size={18} className="text-[#C9A444]" />
+                </div>
+                <div>
+                  <p className="font-bold text-[#1C2B4A] text-sm mb-0.5">Office Hours</p>
+                  <p className="text-[#64748B] text-sm">Monday – Saturday: 10:00 AM – 6:00 PM</p>
                 </div>
               </div>
             </div>
 
-            {/* Quick action buttons */}
+            {/* Action buttons */}
             <div className="space-y-3">
-              <a href="https://wa.me/919999999999?text=Hi+ABPL,+I+want+to+book+a+site+visit."
-                target="_blank" rel="noopener noreferrer"
-                className="flex items-center gap-3 bg-[#25D366] text-white font-semibold px-5 py-3.5 rounded-xl text-sm hover:bg-[#20B857] transition-colors w-full justify-center">
-                💬 Book via WhatsApp
+              <a
+                href="https://wa.me/919630003058?text=Hi+ABPL%2C+I+want+to+book+a+site+visit."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-3 bg-[#25D366] text-white font-semibold px-5 py-3.5 rounded-xl text-sm hover:bg-[#20B857] transition-colors w-full"
+              >
+                💬 Book via WhatsApp — 96300 03058
               </a>
-              <a href="tel:+919999999999"
-                className="flex items-center gap-3 bg-[#0A1D3A] text-white font-semibold px-5 py-3.5 rounded-xl text-sm hover:bg-[#0D2545] transition-colors w-full justify-center">
-                📞 Call Now — +91 99999 99999
+              <a
+                href="tel:+919630003058"
+                className="flex items-center justify-center gap-3 bg-[#1C2B4A] text-white font-semibold px-5 py-3.5 rounded-xl text-sm hover:bg-[#243352] transition-colors w-full"
+              >
+                📞 Call Now — 96300 03058
               </a>
             </div>
 
-            {/* Social */}
+            {/* Social links */}
             <div className="mt-8">
-              <p className="text-sm font-bold text-[#0A1D3A] mb-3">Follow Us</p>
+              <p className="text-sm font-bold text-[#1C2B4A] mb-3">Follow Us</p>
               <div className="flex gap-3">
                 {[
                   { href: "https://instagram.com/aashna_buildwell", icon: <InstagramSVG />, label: "Instagram" },
@@ -94,7 +136,7 @@ export default function ContactPage() {
                   { href: "https://facebook.com/profile.php?id=61588621825762", icon: <FacebookSVG />, label: "Facebook" },
                 ].map((s) => (
                   <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
-                    className="flex items-center gap-2 border border-gray-200 text-[#0A1D3A] hover:border-[#B8972E] hover:text-[#B8972E] px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                    className="flex items-center gap-2 border border-[#E5DECE] text-[#1C2B4A] hover:border-[#C9A444] hover:text-[#C9A444] px-4 py-2 rounded-lg text-sm font-medium transition-colors">
                     {s.icon} {s.label}
                   </a>
                 ))}
@@ -102,8 +144,14 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* Lead form */}
-          <LeadForm title="Book a Free Site Visit" subtitle="Choose a project and our team will arrange your visit." />
+          {/* Right — Enquiry form */}
+          <div className="reveal reveal-right delay-200">
+            <div className="bg-[#F8F5EF] rounded-2xl p-8 border border-[#E5DECE]">
+              <h3 className="font-bold text-[#1C2B4A] text-lg mb-1">Book a Free Site Visit</h3>
+              <p className="text-[#64748B] text-sm mb-6">Fill in your details and our team will reach out within 24 hours.</p>
+              <LeadForm />
+            </div>
+          </div>
         </div>
       </section>
     </>
