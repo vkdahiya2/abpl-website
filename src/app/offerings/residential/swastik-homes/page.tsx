@@ -203,12 +203,13 @@ export default function SwastikHomesPage() {
                       amenity complex in Kharkhoda, built for a life well-lived.
                     </p>
 
-                    {/* Clubhouse image placeholder */}
-                    <div className="bg-white/5 rounded-xl h-52 flex items-center justify-center border border-white/10 mb-6">
-                      <div className="text-center">
-                        <div className="text-5xl mb-3">🏛️</div>
-                        <p className="text-[#C9A444] text-xs font-bold uppercase tracking-widest">Clubhouse Preview Coming Soon</p>
-                      </div>
+                    {/* Clubhouse image */}
+                    <div className="rounded-xl overflow-hidden mb-6">
+                      <img
+                        src="/images/clubhouse.jpg"
+                        alt="Swastik Homes Clubhouse — Kharkhoda's Finest Clubhouse"
+                        className="w-full h-52 object-cover"
+                      />
                     </div>
 
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
