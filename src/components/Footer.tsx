@@ -46,7 +46,7 @@ export default function Footer() {
             </p>
 
             <p className="text-[#C9A444] font-semibold text-sm italic mb-5">
-              &quot;Where Commitment Is Priority&quot;
+              &quot;COMMITMENT WITH INTEGRITY&quot;
             </p>
 
             {/* Social — Instagram, LinkedIn, Facebook */}

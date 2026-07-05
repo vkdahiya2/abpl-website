@@ -82,7 +82,7 @@ export default function AboutPage() {
                 </div>
                 <div className="gold-line gold-line-wide mx-auto mb-8" />
                 <p className="text-center text-[#64748B] text-sm leading-relaxed italic">
-                  "Where Commitment Is Priority" is not just our tagline — it is the standard every
+                  "COMMITMENT WITH INTEGRITY" is not just our tagline — it is the standard every
                   ABPL team member holds themselves to, every single day.
                 </p>
               </div>

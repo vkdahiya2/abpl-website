@@ -129,7 +129,7 @@ export default function HomePage() {
               </p>
 
               <p className="text-[#C9A444] font-bold text-lg italic mb-8">
-                &quot;Where Commitment Is Priority&quot;
+                &quot;COMMITMENT WITH INTEGRITY&quot;
               </p>
 
               <Link href="/about"
