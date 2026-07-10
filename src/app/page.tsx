@@ -34,7 +34,7 @@ export default function HomePage() {
         <div className="absolute top-36 right-32 w-60 h-60 border border-[#C9A444]/07 rounded-full hidden xl:block pointer-events-none" />
 
         {/* ── Hero Content ── */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36 md:py-44">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36 md:py-44">
           <div className="max-w-2xl text-left">
 
             {/* Company badge */}
