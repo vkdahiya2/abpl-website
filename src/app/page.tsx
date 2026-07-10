@@ -35,7 +35,7 @@ export default function HomePage() {
 
         {/* ── Hero Content ── */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36 md:py-44">
-          <div className="max-w-2xl">
+          <div className="max-w-2xl text-left">
 
             {/* Company badge */}
             <div className="animate-fade-in inline-flex items-center gap-2 bg-[#C9A444]/20 border border-[#C9A444]/40 text-[#C9A444] px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-8">
